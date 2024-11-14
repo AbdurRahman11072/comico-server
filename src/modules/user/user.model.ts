@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
-import { user } from "./user.type";
+import { usertype } from "./user.type";
 
-const userSchema = new Schema<user>({
+const userSchema = new Schema<usertype>({
   name: {
     type: String,
     required: true,
@@ -14,7 +14,6 @@ const userSchema = new Schema<user>({
   password: {
     type: String,
     required: true,
-    unique: true,
   },
   photourl: {
     type: String,
@@ -36,6 +35,10 @@ const userSchema = new Schema<user>({
     type: Date,
     default: Date.now,
   },
+  refareid: {
+    type: String,
+    default: "No Refare ID",
+  },
   isadmin: {
     type: String,
     enum: ["user", "modarator", "admin"],
@@ -43,4 +46,4 @@ const userSchema = new Schema<user>({
   },
 });
 
-export const createuser = mongoose.model("User", userSchema);
+export const user = mongoose.model("User", userSchema);

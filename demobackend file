@@ -1,0 +1,102 @@
+// import { Request, Response } from "express";
+// import { user } from "./user.model";
+// import { userSetting } from "../user_settings/user_settings_model";
+
+// const create_user = async (req: Request, res: Response) => {
+//   try {
+//     const email = req.body.email;
+//     const create_User = await user.create(req.body);
+//       res.json({
+//         message: "user created successful",
+//         success: true,
+//         status: 200,
+//         data: create_User,
+//
+//       });
+//   } catch (error) {
+//     res.json(error);
+//   }
+// };
+// const $1 = async (req: Request, res: Response) => {
+//   try {
+//     const getuser = await user.find();
+//     res.json({
+//       message: "User has been found",
+//       success: true,
+//       status: 200,
+//       data: getuser,
+//     });
+//   } catch (error) {
+//     res.json({
+//       message: "failed to found",
+//       status: 404,
+//       data: error,
+//     });
+//   }
+// };
+
+// const $1 = async (req: Request, res: Response) => {
+//   try {
+//     const { userId } = req.params;
+
+//     const $2 = await user.findById(userId);
+//     res.json({
+//       status: 200,
+//       data: $3,
+//     });
+//   } catch (error) {
+//     res.json({
+//       message: "failed to found",
+//       status: 404,
+//       data: error,
+//     });
+//   }
+// };
+
+// const $1 = async (req: Request, res: Response) => {
+//   try {
+//     const { userId } = req.params;
+//     const updated_data = req.body;
+
+//     const result = await $2.findByIdAndUpdate(
+//       userId,
+//       { $set: updated_data },
+//       { new: true, runValidators: true }
+//     );
+//     res.json({
+//       massage: "updated successful",
+//       status: 200,
+//       data: result,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// const $1 = async (req: Request, res: Response) => {
+//   try {
+//     const { userId } = req.params;
+
+//     const deleteuser = await $2.findByIdAndDelete(userId);
+//     res.json({
+
+//       success: true,
+//       status: 200,
+//       data: deleteuser,
+//     });
+//   } catch (error) {
+//     res.json({
+//       message: "failed to found",
+//       status: 404,
+//       data: error,
+//     });
+//   }
+// };
+
+// export const userservises = {
+//   create_user,
+//   getuserById,
+//   updateuser,
+//   deleteuserById,
+//   getalluser,
+// };

@@ -1,9 +1,12 @@
 import express from "express";
-import { user } from "./userservises";
+import { userservises } from "./userservises";
 
 const router = express.Router();
 
-router.post("/", user.create_user);
-router.get("/:userId", user.getuserById);
+router.post("/createuser", userservises.create_user);
+router.get("/alluser", userservises.getalluser);
+router.get("/:userId", userservises.getuserById);
+router.patch("/:userId", userservises.updateuser);
+router.delete("/:userId", userservises.deleteuserById);
 
-export const createuserRoutes = router;
+export const userRoutes = router;
